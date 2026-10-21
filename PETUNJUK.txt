@@ -1,0 +1,24 @@
+PAKET PERBAIKAN SI PANTAU TPS
+
+Isi paket:
+- PengelolaTpsController.php yang disesuaikan dengan nama route di web.php
+- routes/web.php yang menyamakan route dengan form Blade
+- Model Laporan.php dengan route key id_laporan
+- View pengguna/daftar.blade.php dan laporan/rekapitulasi.blade.php yang sebelumnya belum ada
+- File Blade lain yang disertakan dalam ZIP awal
+
+CARA MENERAPKAN
+1. Backup folder proyek SI_PANTAU_TPS terlebih dahulu.
+2. Ekstrak ZIP ini.
+3. Salin folder app dan routes ke root proyek Laravel, izinkan menimpa file saat diminta.
+4. Salin isi resources/views ke folder resources/views proyek.
+5. Dari terminal di root proyek jalankan:
+   php artisan optimize:clear
+   php artisan route:list
+   php artisan serve
+6. Pastikan konfigurasi .env menunjuk ke database si_pantau_tps dan jalankan melalui XAMPP/MySQL.
+
+CATATAN PENTING
+- ZIP awal hanya berisi sebagian folder app/routes/views, bukan seluruh proyek Laravel atau dump database. Karena itu paket ini belum bisa memastikan seluruh kolom database, autentikasi provider, versi Laravel, maupun tampilan runtime cocok 100% sebelum dites di proyek lokal.
+- Tidak ada migrasi atau file SQL database di ZIP awal. Jangan jalankan migrate:fresh karena bisa menghapus data.
+- Empat role yang dipakai oleh controller: admin, uptd, supir, masyarakat.
